@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,20 +13,20 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="16-2" translatesAutoresizingMaskIntoConstraints="NO" id="mXC-w8-ZiM">
-                                <rect key="frame" x="80" y="319" width="254" height="258"/>
+                                <rect key="frame" x="80" y="384" width="608" height="256"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mXC-w8-ZiM" secondAttribute="trailing" constant="80" id="3Oh-fs-2wf"/>
+                            <constraint firstItem="mXC-w8-ZiM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="63O-6M-gP3"/>
                             <constraint firstItem="mXC-w8-ZiM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="EJJ-xg-mgS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mXC-w8-ZiM" secondAttribute="bottom" constant="285" id="SOK-ZO-eJZ"/>
-                            <constraint firstItem="mXC-w8-ZiM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="275" id="elE-N1-sFB"/>
+                            <constraint firstItem="mXC-w8-ZiM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="MEq-aR-jZ2"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,7 +36,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="16-2" width="128" height="128"/>
+        <image name="16-2" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
