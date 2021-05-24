@@ -1,0 +1,39 @@
+
+/* Class = "UIButton"; normalTitle = "Go ChatIn"; ObjectID = "11v-AU-u4M"; */
+"11v-AU-u4M.normalTitle" = "Go ChatIn";
+
+/* Class = "UITextField"; placeholder = "Nick name ChatIn"; ObjectID = "Gl6-t1-IKQ"; */
+"Gl6-t1-IKQ.placeholder" = "Nick name ChatIn";
+
+/* Class = "UILabel"; text = "Test Chat User"; ObjectID = "H0y-iq-FHm"; */
+"H0y-iq-FHm.text" = "Test Chat User";
+
+/* Class = "UIBarButtonItem"; title = "Registration"; ObjectID = "Nce-Dx-ygA"; */
+"Nce-Dx-ygA.title" = "Registration";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "Y4o-2X-4nD"; */
+"Y4o-2X-4nD.placeholder" = "E-mail";
+
+/* Class = "UITextField"; placeholder = "email user"; ObjectID = "cCE-uS-EkP"; */
+"cCE-uS-EkP.placeholder" = "email user";
+
+/* Class = "UILabel"; text = "Test Chat User"; ObjectID = "d5e-E9-tO2"; */
+"d5e-E9-tO2.text" = "Test Chat User";
+
+/* Class = "UIBarButtonItem"; title = "Log Out"; ObjectID = "dOl-Ho-LUw"; */
+"dOl-Ho-LUw.title" = "Log Out";
+
+/* Class = "UITextField"; placeholder = "password account"; ObjectID = "eZJ-Q0-Ohj"; */
+"eZJ-Q0-Ohj.placeholder" = "password account";
+
+/* Class = "UIButton"; normalTitle = "Registration User"; ObjectID = "huQ-qS-Kyv"; */
+"huQ-qS-Kyv.normalTitle" = "Registration User";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "lN2-BY-Gwd"; */
+"lN2-BY-Gwd.placeholder" = "Password";
+
+/* Class = "UINavigationItem"; title = "ChatInUser"; ObjectID = "nGY-vM-N42"; */
+"nGY-vM-N42.title" = "ChatInUser";
+
+/* Class = "UITextField"; placeholder = "Full name"; ObjectID = "z9q-0p-wNJ"; */
+"z9q-0p-wNJ.placeholder" = "Full name";

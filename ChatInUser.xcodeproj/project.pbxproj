@@ -10,6 +10,7 @@
 		7C1FC57C6C3850889649632B /* Pods_ChatInUser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893E7CE373DA624A24EE0A7D /* Pods_ChatInUser.framework */; };
 		D11A202525DD786300745856 /* Chats.json in Resources */ = {isa = PBXBuildFile; fileRef = D11A202425DD786300745856 /* Chats.json */; };
 		D11A202825DD789600745856 /* decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11A202725DD789600745856 /* decodable.swift */; };
+		D14A0A84265AA9F200F1DA3B /* WeakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A0A83265AA9F200F1DA3B /* WeakVC.swift */; };
 		D1FD2B4425D6FDE800F8B707 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD2B4325D6FDE800F8B707 /* AppDelegate.swift */; };
 		D1FD2B4625D6FDE800F8B707 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD2B4525D6FDE800F8B707 /* SceneDelegate.swift */; };
 		D1FD2B4825D6FDE800F8B707 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD2B4725D6FDE800F8B707 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		893E7CE373DA624A24EE0A7D /* Pods_ChatInUser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatInUser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11A202425DD786300745856 /* Chats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Chats.json; sourceTree = "<group>"; };
 		D11A202725DD789600745856 /* decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decodable.swift; sourceTree = "<group>"; };
+		D14A0A83265AA9F200F1DA3B /* WeakVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVC.swift; sourceTree = "<group>"; };
 		D1FD2B4025D6FDE800F8B707 /* ChatInUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatInUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FD2B4325D6FDE800F8B707 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1FD2B4525D6FDE800F8B707 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				D1FD2BF925D97FF300F8B707 /* ConfigCell.swift */,
+				D14A0A83265AA9F200F1DA3B /* WeakVC.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				D1FD2BBB25D715AE00F8B707 /* ValidatorService.swift in Sources */,
 				D1FD2B6325D6FEDA00F8B707 /* UIAlert.swift in Sources */,
 				D1FD2B4625D6FDE800F8B707 /* SceneDelegate.swift in Sources */,
+				D14A0A84265AA9F200F1DA3B /* WeakVC.swift in Sources */,
 				D1FD2BDB25D72ADE00F8B707 /* ModelChat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

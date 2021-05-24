@@ -9,7 +9,9 @@ import UIKit
 import FirebaseFirestore
 import Firebase
 
+
 class UserVC: UIViewController {
+
 
     var users = [ModelUser]()
     var chats = [ModelChat]()
@@ -25,16 +27,17 @@ class UserVC: UIViewController {
     
     deinit {
         print("Deinit UserVC")
-        userListener?.remove()
-        chatsListener?.remove()
+        print("Deinit Listener")
+        self.userListener?.remove()
+        self.chatsListener?.remove()
     }
     
     enum Section: Int, CaseIterable {
         case  chats
     }
     
-    @IBOutlet weak var logout: UIBarButtonItem!
-    
+    weak var delegate: UserVCDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,7 +58,8 @@ class UserVC: UIViewController {
                 self.alertShow(with: "Error!", and: error.localizedDescription)
             }
         })
-
+        
+        
 //
 //        let chatsRef = FirestoreService.shared.db.collection(["user", usersId, "chats"].joined(separator: "/"))
 //        let chatsListener = chatsRef.addSnapshotListener { (querySnapshot, error) in
@@ -76,8 +80,6 @@ class UserVC: UIViewController {
 //            }
 //           }
 
-
-        
     }
 
     
@@ -207,17 +209,22 @@ extension UserVC {
         ac.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (_) in
             do {
                 try Auth.auth().signOut()
-              //  UIApplication.shared.keyWindow?.rootViewController = AuthVC()
                 let authVC = self.storyboard!.instantiateViewController(withIdentifier: "AuthVC") as! AuthVC
                 authVC.modalPresentationStyle = .fullScreen
-                self.present(authVC, animated: true, completion: nil)
+                self.navigationController?.pushViewController(authVC, animated: false)
+//                self.present(authVC, animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+             //  UIApplication.shared.keyWindow?.rootViewController = AuthVC()
             } catch {
                 print("Error signing out: \(error.localizedDescription)")
             }
         }))
-        present(ac, animated: true, completion: nil)
-        
+        DispatchQueue.main.async(execute: {
+            self.present(ac, animated: true, completion: nil)
+        })
+
     }
+
 }
  //MARK: Preview
 

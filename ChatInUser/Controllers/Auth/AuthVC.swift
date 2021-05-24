@@ -14,14 +14,18 @@ class AuthVC: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var startChat: UIButton!
     
-    
+  //  let userVC = UserVC()
+
     deinit {
         print("Deinit AuthVC")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
+
     }
+
     // очистка полей
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -30,6 +34,11 @@ class AuthVC: UIViewController {
         password?.text = ""
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+
+    }
+    
     //  Авторизация пользователя в Firestore и переход на storyboard
     @IBAction func Start(_ sender: UIButton) {
         

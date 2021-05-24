@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseFirestore
 
-struct ModelUser: Hashable, Decodable {
+class ModelUser: Hashable, Decodable {
     var username: String
     var email: String
     var lastname: String
@@ -19,6 +19,7 @@ struct ModelUser: Hashable, Decodable {
         self.email = email
         self.lastname = lastname
         self.id = id
+        print("class user Init \(username) and \(id)")
     }
     
     init?(document: DocumentSnapshot) {
@@ -32,6 +33,8 @@ struct ModelUser: Hashable, Decodable {
         self.email = email
         self.lastname = lastname
         self.id = id
+        print("struct user Init \(username) and \(id)")
+
     }
     
     init?(document: QueryDocumentSnapshot) {
@@ -45,6 +48,8 @@ struct ModelUser: Hashable, Decodable {
         self.email = email
         self.lastname = lastname
         self.id = id
+        print("struct user Query \(username) and \(id)")
+
     }
     
     var representation: [String: Any] {
@@ -53,6 +58,10 @@ struct ModelUser: Hashable, Decodable {
         rep["lastname"] = lastname
         rep["uid"] = id
         return rep
+    }
+    
+    deinit {
+        print("Deinit Model User \(id) and \(username)")
     }
     
     func hash(into hasher: inout Hasher) {

@@ -12,7 +12,7 @@
         <!--ChatInUser-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="AuthVC" id="BYZ-38-t0r" customClass="AuthVC" customModule="ChatInUser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthVC" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="AuthVC" customModule="ChatInUser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +100,7 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="75"/>
         </scene>
-        <!--UserVC-->
+        <!--Title-->
         <scene sceneID="TRE-zn-j9c">
             <objects>
                 <viewController storyboardIdentifier="UserVC" id="Zsf-6V-mA2" customClass="UserVC" customModule="ChatInUser" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,16 +110,7 @@
                         <viewLayoutGuide key="safeArea" id="zIe-nW-40b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MZm-VL-TD8">
-                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="dOl-Ho-LUw">
-                            <connections>
-                                <action selector="logout:" destination="Zsf-6V-mA2" id="PiR-1p-SYb"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="logout" destination="dOl-Ho-LUw" id="99M-Yh-oau"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Title" id="W8r-aa-rMP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7l-8G-BSX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -235,13 +226,16 @@
         <!--Navigation Controller-->
         <scene sceneID="7Hy-IB-5l1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ug1-c7-dKn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Ug1-c7-dKn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7WC-GF-rVD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q2D-gs-rk6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QvX-Jk-II2"/>
                     </connections>
@@ -249,23 +243,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4m-hB-xhr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="75"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="kgh-PH-VxT">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="w56-iZ-CuM" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gjs-ns-1mQ">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Zsf-6V-mA2" kind="relationship" relationship="rootViewController" id="79T-4B-yOO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JbG-va-IZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1080" y="767"/>
         </scene>
     </scenes>
     <resources>

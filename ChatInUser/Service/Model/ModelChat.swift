@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseFirestore
 
-struct ModelChat: Hashable, Decodable {
+class ModelChat: Hashable, Decodable {
     var friendUsername: String
     var lastname: String
     var lastMessageContent: String
@@ -39,6 +39,10 @@ struct ModelChat: Hashable, Decodable {
         self.friendId = friendId
         self.lastname = lastname
         self.lastMessageContent = lastMessageContent
+    }
+    
+    deinit {
+        print("Deinit ModelChat \(friendId) and \(friendUsername)")
     }
     
     func hash(into hasher: inout Hasher) {

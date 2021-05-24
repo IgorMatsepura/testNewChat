@@ -38,7 +38,6 @@ class ChatVC: MessagesViewController {
     
     private var messages: [ModelMessages] = []
     private var messageListener: ListenerRegistration?
-    
     private let user: ModelUser
     private var incom: String
     
@@ -50,7 +49,10 @@ class ChatVC: MessagesViewController {
         title = user.username
     }
 
+    weak var delegate: UserVCDelegate?
+
     required init?(coder: NSCoder) {
+        print("init ChatVC")
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -61,7 +63,7 @@ class ChatVC: MessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        dismissChatVC()
         if let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
             layout.textMessageSizeCalculator.outgoingAvatarSize = .zero
             layout.textMessageSizeCalculator.incomingAvatarSize = .zero
@@ -81,11 +83,11 @@ class ChatVC: MessagesViewController {
         let messagesListener = ref.addSnapshotListener { (querySnapshot, error) in
             guard let snapshot = querySnapshot else { return }
             
-            snapshot.documentChanges.forEach { (diff) in
+            snapshot.documentChanges.forEach { [weak self] (diff) in
                 guard let message = ModelMessages(document: diff.document) else { return }
                 switch diff.type {
                 case .added:
-                    self.inputMessage(message: message)
+                    self!.inputMessage(message: message)
                 case .modified:
                     break
                 case .removed:
@@ -96,6 +98,13 @@ class ChatVC: MessagesViewController {
         messagesCollectionView.reloadData()
         print(messagesListener)
     }
+    
+    private func dismissChatVC() {
+        self.dismiss(animated: true) {
+            self.delegate?.toUserVC()
+        }
+    }
+    
     // инициализация ввода сообщения в окне его сортировка
     private func inputMessage(message: ModelMessages) {
         guard !messages.contains(message) else { return }
