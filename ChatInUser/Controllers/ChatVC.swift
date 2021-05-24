@@ -47,23 +47,25 @@ class ChatVC: MessagesViewController {
         super.init(nibName: nil, bundle: nil)
         
         title = user.username
+        print("init ChatVC \(user) and \(userId)")
     }
 
     weak var delegate: UserVCDelegate?
 
     required init?(coder: NSCoder) {
-        print("init ChatVC")
         fatalError("init(coder:) has not been implemented")
     }
 
     deinit {
-        messageListener?.remove()
         print("Deinit ChatVC")
+        messageListener?.remove()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dismissChatVC()
+        
+        
         if let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
             layout.textMessageSizeCalculator.outgoingAvatarSize = .zero
             layout.textMessageSizeCalculator.incomingAvatarSize = .zero
@@ -80,10 +82,10 @@ class ChatVC: MessagesViewController {
         // на БД и линки на чатующихся пользователей, отслеживание по снэпшоту каждой новой записи
         let ref = FirestoreService.shared.db.collection("user").document(user.id).collection("chats").document(incom).collection("messages")
 
-        let messagesListener = ref.addSnapshotListener { (querySnapshot, error) in
+        let messagesListener = ref.addSnapshotListener { [weak self] (querySnapshot, error) in
             guard let snapshot = querySnapshot else { return }
             
-            snapshot.documentChanges.forEach { [weak self] (diff) in
+            snapshot.documentChanges.forEach { (diff)  in
                 guard let message = ModelMessages(document: diff.document) else { return }
                 switch diff.type {
                 case .added:
@@ -96,22 +98,15 @@ class ChatVC: MessagesViewController {
             }
         }
         messagesCollectionView.reloadData()
-        print(messagesListener)
     }
-    
-    private func dismissChatVC() {
-        self.dismiss(animated: true) {
-            self.delegate?.toUserVC()
-        }
-    }
-    
+
     // инициализация ввода сообщения в окне его сортировка
     private func inputMessage(message: ModelMessages) {
         guard !messages.contains(message) else { return }
         messages.append(message)
         messages.sort()
-                
         messagesCollectionView.reloadData()
+        
         DispatchQueue.main.async {
             self.messagesCollectionView.scrollToLastItem(animated: true)
         }

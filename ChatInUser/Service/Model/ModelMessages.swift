@@ -9,7 +9,7 @@ import UIKit
 import FirebaseFirestore
 import MessageKit
 
-struct ModelMessages: Hashable, MessageType {
+class ModelMessages: Hashable, MessageType {
     var sender: SenderType
 
     let content: String
@@ -57,6 +57,10 @@ struct ModelMessages: Hashable, MessageType {
             "content": content
         ]
         return rep
+    }
+    
+    deinit {
+        print("Deinit ModelMessages \(content)")
     }
     
     func hash(into hasher: inout Hasher) {

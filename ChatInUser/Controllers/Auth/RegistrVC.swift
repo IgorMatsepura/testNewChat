@@ -43,8 +43,10 @@ class RegistrVC: UIViewController {
                     
                     switch error {
                     case .success(_):
-                        print("VC")
                         self.viewWillAppear(true)
+                        let authVC = self.storyboard!.instantiateViewController(withIdentifier: "AuthVC") as! AuthVC
+                        authVC.modalPresentationStyle = .fullScreen
+                        self.navigationController?.pushViewController(authVC, animated: true)
 
                     case .failure(_):
                         print("error")
