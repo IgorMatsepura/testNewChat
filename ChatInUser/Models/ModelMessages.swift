@@ -60,7 +60,7 @@ class ModelMessages: Hashable, MessageType {
     }
     
     deinit {
-        print("Deinit ModelMessages \(content)")
+        print("Deinit ModelMessages \(sender)")
     }
     
     func hash(into hasher: inout Hasher) {

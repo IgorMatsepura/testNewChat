@@ -35,7 +35,7 @@ extension AuthError: LocalizedError {
         case .cannotGetUserInfo:
             return NSLocalizedString("Not load info about User из FireStore", comment: "")
         case .cannotUnwrapToModelUser:
-            return NSLocalizedString("Not converted MModelUser in  User", comment: "")
+            return NSLocalizedString("Not converted ModelUser in  User", comment: "")
         }
     }
 }
